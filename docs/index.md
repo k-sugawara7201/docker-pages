@@ -38,7 +38,7 @@
 - 下記のコマンドで、Ubuntuの登録を解除します  
   ※このコマンドを実行しないと、再度wslを使用する際に当時の状態で復元されてしまいます  
   ```
-  wsl --unregister ubuntu
+  wsl --unregister Ubuntu
   ```
 - 最後に、インストールされているUbuntuのアプリケーションをアンインストールします  
 - 続いて、windowsの設定を変更します  

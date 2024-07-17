@@ -21,6 +21,8 @@ theme:
       - name: Japanese
         link: /
         lang: ja
+  icon:
+    repo: fontawesome/brands/github
 markdown_extensions:
   - pymdownx.highlight:
       use_pygments: true
@@ -28,3 +30,10 @@ markdown_extensions:
       pygments_style: monokai
       linenums: true
   - pymdownx.superfences
+repo_url: https://github.com/k-sugawara7201/docker-pages
+repo_name: k-sugawara7201/docker-pages
+plugins:
+  search:
+    lang: 'ja'
+site_name: Docker Pages
+copyright: "&copy; 2024 k-sugawara7201"
