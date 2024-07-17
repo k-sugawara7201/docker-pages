@@ -1,0 +1,30 @@
+site_name: WSL2を用いたdocker環境の構築手順
+theme:
+  name: material
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: slate
+      primary: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  font:
+    text: Noto Sans JP
+  extra:
+    alternate:
+      - name: English
+        link: /en/
+        lang: en
+      - name: Japanese
+        link: /
+        lang: ja
+markdown_extensions:
+  - pymdownx.highlight:
+      use_pygments: true
+      noclasses: true
+      pygments_style: monokai
+      linenums: true
+  - pymdownx.superfences
