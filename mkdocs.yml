@@ -1,4 +1,9 @@
 site_name: WSL2を用いたdocker環境の構築手順
+nav:
+  - ホーム: index.md
+  - WSL2のインストール: install_for_wsl2.md
+  - dockerのインストール: 01_dockerのインストール.md
+  - dockerでよく使うコマンド: 02_dockerでよく使うコマンド.md
 theme:
   name: material
   palette:
