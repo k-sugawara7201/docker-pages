@@ -10,7 +10,7 @@
       
       
       
-        <link rel="next" href="01_docker%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/">
+        <link rel="next" href="install_for_wsl2/">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wsl2" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              WSL2の環境構築
+              ホーム
             
           </span>
         </div>
@@ -262,7 +262,7 @@
           
   
   <span class="md-ellipsis">
-    WSL2の環境構築
+    ホーム
   </span>
   
 
@@ -273,7 +273,7 @@
         
   
   <span class="md-ellipsis">
-    WSL2の環境構築
+    ホーム
   </span>
   
 
@@ -295,27 +295,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wsl2_1" class="md-nav__link">
+  <a href="#docker" class="md-nav__link">
     <span class="md-ellipsis">
-      WSL2のインストール
+      Dockerとは？
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#wsl2_2" class="md-nav__link">
+  <a href="#docker_1" class="md-nav__link">
     <span class="md-ellipsis">
-      WSL2のアンインストール
+      Dockerコンテナについて
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-desktop" class="md-nav__link">
+  <a href="#docker_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Docker Desktopがインストールされている場合
+      Dockerでよく使われるファイル・ソフト
     </span>
   </a>
   
@@ -336,11 +336,31 @@
   
   
     <li class="md-nav__item">
+      <a href="install_for_wsl2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WSL2のインストール
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="01_docker%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    dockerのインストール手順
+    dockerのインストール
   </span>
   
 
@@ -396,27 +416,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wsl2_1" class="md-nav__link">
+  <a href="#docker" class="md-nav__link">
     <span class="md-ellipsis">
-      WSL2のインストール
+      Dockerとは？
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#wsl2_2" class="md-nav__link">
+  <a href="#docker_1" class="md-nav__link">
     <span class="md-ellipsis">
-      WSL2のアンインストール
+      Dockerコンテナについて
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-desktop" class="md-nav__link">
+  <a href="#docker_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Docker Desktopがインストールされている場合
+      Dockerでよく使われるファイル・ソフト
     </span>
   </a>
   
@@ -440,76 +460,127 @@
   
 
 
-<h1 id="wsl2">WSL2の環境構築</h1>
-<h2 id="wsl2_1">WSL2のインストール</h2>
+<h1 id="_1">はじめに</h1>
+<p>Dockerを使用して開発を行っている現場がたくさんあります。<br />
+しかし、Dockerって何？なんで便利なの？までは皆さん考えずに使っていると思います。<br />
+そこで自分なりに調べてDockerについて簡単にまとめました。<br />
+ご一読いただければ幸いです。  </p>
+<h2 id="docker">Dockerとは？</h2>
+<p>Dockerとは、1台のサーバー上で様々なアプリケーションを手軽に仮想化・実行できるようにするためのプラットフォームのことを指しています。<br />
+Dockerコンテナと呼ばれるアプリケーションを実行するための環境を1台のサーバー上に作成することができます。<br />
+コンテナを作成するための設計図として、イメージというものが存在しており、そのイメージを使用することで<br />
+誰でも簡単に同じ開発環境のコンテナを作成することができます。  </p>
+<h2 id="docker_1">Dockerコンテナについて</h2>
+<p>Dockerコンテナは環境であると説明しましたが、ローカル環境と何が違うのかと思うかもしれません。<br />
+Dockerコンテナの環境とローカル環境の違いについて説明します。</p>
 <ul>
-<li>windows powershellを<strong>管理者として実行</strong>で起動します</li>
-<li>下記のコマンドを入力&amp;実行します<br />
-  <div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>wsl --install
-</code></pre></div></td></tr></table></div></li>
-<li>インストールが完了したら、PCを再起動します<br />
-  ※コンソールでユーザ名の入力が求められた場合は、再起動不要です</li>
-<li>再起動後、windowsの検索バーに「Ubuntu」と入力し、コンソールを開く</li>
-<li>ユーザー名、パスワードを設定します</li>
-<li>設定後、一度コンソールを閉じ、コマンドプロンプトを起動します  </li>
-<li>下記のコマンドを入力&amp;実行し、wsl2の動作確認をします<br />
-  <div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>wsl -l -v
-</code></pre></div></td></tr></table></div>
-  下記のように表示されていればOKです<br />
+<li>
+<p>開発に必要なライブラリ<br />
+  開発を行う際に必要なライブラリについて、ローカル環境でインストールすると、以前開発していたものが残っている可能性があります。<br />
+  残っていたライブラリが原因で、開発に不具合が出てしまっては元も子もありません。<br />
+  一方Dockerコンテナでは現在開発しているアプリに必要なライブラリだけをコンテナの中にインストールすることができるため、
+  クリーンな環境で開発を進めることができます。  </p>
+</li>
+<li>
+<p>環境の構築のしやすさ<br />
+  例えば、開発に<code>node</code>や<code>npm</code>が必要な場合、ローカル環境では自分で必要なバージョンをインストールしなければなりません。<br />
+  しかしDockerコンテナのイメージというものを使用すると、一発で条件に沿った環境を作成することができます。 </p>
+</li>
+</ul>
+<p>このように、コンテナとローカルではクリーンな環境であったり環境構築のしやすさで異なる点があります。</p>
+<h2 id="docker_2">Dockerでよく使われるファイル・ソフト</h2>
+<ul>
+<li>
+<p>Dockerfile<br />
+  Dockerイメージを作成するための設計書のファイル。<br />
+  このファイルを使用して、コンテナを作成する。<br />
+  下記はDockerfileの構成例です
   <div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>  NAME              STATE           VERSION
-* Ubuntu            Running         2
-</code></pre></div></td></tr></table></div></li>
-</ul>
-<h2 id="wsl2_2">WSL2のアンインストール</h2>
-<ul>
-<li>windows powershellを<strong>管理者で実行</strong>で起動します</li>
-<li>下記のコマンドを入力し、linuxの状態を確認します<br />
-  <div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>wsl -l -v
-</code></pre></div></td></tr></table></div></li>
-<li>下記のコマンドで、wslを停止します
-  ※wsl内のコマンドで停止することはできないので、必ずpowershell、もしくはコマンドプロンプトで実行してください<br />
-  <div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>wsl --shutdown
-</code></pre></div></td></tr></table></div></li>
-<li>再度下記のコマンドを実行し、wslが停止していることを確認します<br />
-  <div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>wsl -l -v
-</code></pre></div></td></tr></table></div></li>
-<li>下記のコマンドで、Ubuntuの登録を解除します<br />
-  ※このコマンドを実行しないと、再度wslを使用する際に当時の状態で復元されてしまいます<br />
-  <div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>wsl --unregister Ubuntu
-</code></pre></div></td></tr></table></div></li>
-<li>最後に、インストールされているUbuntuのアプリケーションをアンインストールします  </li>
-<li>続いて、windowsの設定を変更します<br />
-  内容については<a href="https://qiita.com/zakoken/items/61141df6aeae9e3f8e36#%E6%89%8B%E9%A0%86%EF%BC%92wsl2-%E3%81%A8%E5%91%A8%E8%BE%BA%E3%82%A2%E3%83%97%E3%83%AA%E6%A9%9F%E8%83%BD%E3%81%AE%E7%84%A1%E5%8A%B9%E5%8C%96">こちら</a>を参照ください</li>
-</ul>
-<h2 id="docker-desktop">Docker Desktopがインストールされている場合</h2>
-<p>Docker Desktopがすでにインストールされている場合は<br />
-<code>wsl -l -v</code> コマンドを実行すると、下記のように表示されます<br />
-(<code>docker-desktop</code>に<code>*</code>がついています)<br />
-<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>  NAME              STATE           VERSION
-* docker-desktop    Running         2
-  Ubuntu            Stopped         2
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">5</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>FROM node:latest
+WORKDIR /app
+COPY ./app .
+RUN npm install
+EXPOSE 3000
 </code></pre></div></td></tr></table></div></p>
-<p>この場合は、docker-desktopのディストリビューションが使用される設定になっているので、<br />
-Ubuntuに切り替える必要があります  </p>
-<ul>
-<li>下記のコマンドを実行します<br />
-  <div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>wsl -s Ubuntu
-</code></pre></div></td></tr></table></div></li>
-<li>ディストリビューションの設定が変更できているか確認します<br />
-  <div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>wsl -l -v
-</code></pre></div></td></tr></table></div></li>
-<li>下記のような表示になっていれば切り替えOKです<br />
-  (<code>Ubuntu</code>に<code>*</code>がついています)<br />
-  <div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>  NAME              STATE           VERSION
-* Ubuntu            Running         2
-  docker-desktop    Running         2
-</code></pre></div></td></tr></table></div></li>
+</li>
+<li>
+<p>docker-compose<br />
+  複数のコンテナを一度に操作することができる機能<br />
+  この機能の設定ファイルとして docker-compose.yml ファイルが存在している。<br />
+  このdocker-compose.ymlファイルには複数のコンテナ間の関係や環境変数などを記載します。<br />
+  <div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">16</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">19</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">21</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">22</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">23</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">24</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">25</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">26</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">27</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">28</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">29</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">30</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">31</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>version: &quot;3&quot;
+services:
+  spring-boot:
+    build:
+      context: ./web-spring2
+      dockerfile: Dockerfile
+    ports:
+      - &quot;8080:8080&quot;
+    depends_on:
+      mysql:
+        condition: service_started
+    entrypoint: &quot;java -jar /app/app.jar&quot;
+    networks:
+      - app-net
+  mysql:
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    ports:
+      - &quot;3306:3306&quot;
+    volumes:
+      - ./mysql/settings:/etc/mysql/conf.d/
+      - ./mysql/data/:/var/lib/mysql/
+    environment:
+      MYSQL_DATABASE: study
+      MYSQL_ROOT_PASSWORD: riku0456
+    networks:
+      - app-net
+networks:
+  app-net:
+    driver: bridge
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Docker Desktop<br />
+  WindowsやMacOSでDocker環境を構築・利用するためのツール<br />
+  本来dockerはコマンドラインで操作しますが、このDocker DesktopはUIを使用してコンテナを操作することができます。  </p>
+</li>
 </ul>
+<p>では、実際にDockerを使える環境を作成してみましょう！</p>
 
 
 
